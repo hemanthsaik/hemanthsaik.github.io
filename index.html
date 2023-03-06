@@ -44,17 +44,80 @@
             dolorem laudantium sunt numquam libero nemo commodi ipsum fugiat, ducimus voluptatibus laboriosam sapiente?
             Alias, ex?</p>
           <div class="tab-titles">
-            <p class="tab-links active-link">Skills</p>
-            <p class="tab-links">Experience</p>
-            <p class="tab-links">Education</p>
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
           </div>
-          <div class="tab-contents">
-
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>UI?UX</span><br>Desinging Web/App Interfaces</li>
+              <li><span>Web devlopment</span><br>Web App devlopment</li>
+              <li><span>App devlopment</span><br>Mobile App devlopment</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>about</span><br>Desinging Web/App Interfaces</li>
+              <li><span>Web devlopment</span><br>Web App devlopment</li>
+              <li><span>App devlopment</span><br>Mobile App devlopment</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>Education</span><br>Desinging Web/App Interfaces</li>
+              <li><span>Web devlopment</span><br>Web App devlopment</li>
+              <li><span>App devlopment</span><br>Mobile App devlopment</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- -----------------sevices-------------- -->
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">My services</h1>
+      <div class="services-list">
+        <div>
+          <h2>Web Design</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta consequatur corporis quo voluptas
+            explicabo sunt commodi, nulla tenetur molestias dolorum?</p>
+          <a href="#">learn More</a>
+        </div>
+        <div>
+          <h2>App Design</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta consequatur corporis quo voluptas
+            explicabo sunt commodi, nulla tenetur molestias dolorum?</p>
+          <a href="#">learn More</a>
+        </div>
+        <div>
+          <h2>UI/UX Design</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta consequatur corporis quo voluptas
+            explicabo sunt commodi, nulla tenetur molestias dolorum?</p>
+          <a href="#">learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    const opentab = (tabname) => {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link")
+      document.getElementById(tabname).classList.add('active-tab')
+    }
+
+  </script>
+
+
 </body>
 
 </html>
